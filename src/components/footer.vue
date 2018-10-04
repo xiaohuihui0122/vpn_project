@@ -1,7 +1,7 @@
 <template>
  <div class="container">
     <div class="sub-cont">
-        这是一个Footer标签
+        这是一个改变过的Footer标签
         <ul>
             <li>选购及了解</li>
             <li><router-link to="">宫颈癌筛查</router-link></li>

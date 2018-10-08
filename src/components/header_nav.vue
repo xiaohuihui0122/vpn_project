@@ -6,7 +6,7 @@
           <img src='../assets/imgs/logo.gif' alt="有爱LOGO">
         </router-link>
       </div>
-      <nav id="navX">
+      <nav id="navX" :style="'width:'+navWidth">
         <ul>
           <li v-for="(item, index) in navItems" :key="index" @mouseenter="enter(index)" @mouseleave="leave(index)" @click="handleClick(index)">
             <router-link :to="item.href">{{item.text}}</router-link>
@@ -14,6 +14,7 @@
         </ul>
         <div class="indicator" v-show="mouseHover" v-bind:style="{left:lineLeft}"></div>
       </nav>
+      <router-link v-if="isLogin" class="header-icon-container" to="/index/myOrder">退出登录</router-link>
       <router-link v-if="isLogin" class="header-icon-container" to="/index/myOrder">我的订单</router-link>
       <router-link v-else class="header-icon-container" to="/index/login">登录</router-link>
     </div>
@@ -27,6 +28,7 @@
    data () {
      return {
        isLogin:false,
+       navWidth:'70%',//我的订单60%
        navItems:[
          {text:'宫颈癌筛查',href:'/index/vpnScreen',lineLeft:'0'},
          {text:'性病检测',href:'/index/xbTest',lineLeft:'25%'},
@@ -62,7 +64,7 @@
   .box{width:100%;height:100px;/*no*/position:relative;}
   .container{width:1170px;/*no*/height:100px;margin:0 auto;}
   .text-logo{width: 15%;height:100px;float:left;}
-  #navX{width: 70%;height:100px;/*no*/float:left;position:relative;}
+  #navX{height:100px;/*no*/float:left;position:relative;}
   #navX ul{margin:0 auto;height:99px;/*no*/}
   #navX ul li{width:25%;height:90px;/*no*/line-height:100px;/*no*/float:left;font-size: 16px;/*no*/text-align:center;text-decoration:none;}
   #navX ul li a{display:inline-block;width:100%;height:100%;color:#333;}

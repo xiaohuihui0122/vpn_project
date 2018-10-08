@@ -1,6 +1,10 @@
 <template>
  <div class="container">
     <div class="sub-cont">
+<<<<<<< HEAD
+=======
+        这是一个改变过的Footer标签
+>>>>>>> 1289a2035b614a12f69c08045b29fe2330956433
         <ul>
             <li>选购及了解</li>
             <li><router-link to="/index/vpnScreen">宫颈癌筛查</router-link></li>

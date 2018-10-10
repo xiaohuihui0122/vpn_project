@@ -104,7 +104,7 @@
   #navX ul{margin:0 auto;height:99px;/*no*/}
   #navX ul li{width:25%;height:90px;/*no*/line-height:100px;/*no*/float:left;font-size: 16px;/*no*/text-align:center;text-decoration:none;}
   #navX ul li a{display:inline-block;width:100%;height:100%;color:#333;}
-  .header-icon-container{display:block;cursor:pointer;float:right;margin-top:33.5px;/*no*/width:144px;/*no*/height:33px;/*no*/color:#d40614;border:1px solid #d40614;text-align:center;line-height:33px;/*no*/border-radius: 3px;/*no*/}
+  .header-icon-container{display:block;cursor:pointer;float:right;margin-top:33.5px;/*no*/width:144px;/*no*/height:33px;/*no*/color:#d40614;border:1px solid #d40614;/*no*/text-align:center;line-height:33px;/*no*/border-radius: 3px;/*no*/}
   .header-icon-container:hover{color:#d40614;}
   .text-logo{clear:both;}
   .line{width:100%;height:1px;border-bottom: 2px solid #e5e5e5;bottom:0;position:absolute;z-index: 1000;}

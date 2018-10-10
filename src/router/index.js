@@ -4,7 +4,7 @@ import Router from 'vue-router'
 import Index from '@/view/index/index.vue'
   // 主页面
   import Leaflets from '@/view/leaflets/leaflets.vue'
-  import VpnScreen from '@/view/vpnScreen/vpnScreen.vue'
+  import HpvScreen from '@/view/hpvScreen/hpvScreen.vue'
   import XbTest from '@/view/xbTest/xbTest.vue'
   import Classroom from '@/view/classroom/classroom.vue'
   import Know from '@/view/know/know.vue'
@@ -25,6 +25,11 @@ import Index from '@/view/index/index.vue'
     import newsSix from '@/view/foot-link/newsCenter/news6.vue'
     import newsSeven from '@/view/foot-link/newsCenter/news7.vue'
     import newsEight from '@/view/foot-link/newsCenter/news8.vue'
+  //我的订单页面
+  import MyOrder from '@/view/myOrder/myOrder.vue'
+//订单支付，预览页面
+import Preview from '@/view/orderPay/preview.vue'
+import CashierDesk from '@/view/orderPay/cashierDesk.vue'
 
 Vue.use(Router)
 
@@ -38,6 +43,16 @@ export default new Router({
       redirect: '/index/leaflets'
     },
     {
+      path: '/order/preview',
+      name: 'Preview',
+      component: Preview,
+    },
+    {
+      path: '/pay/cashier_desk',
+      name: 'CashierDesk',
+      component: CashierDesk,
+    },
+    {
       path: '/index',
       name: 'Index',
       component: Index,
@@ -48,9 +63,9 @@ export default new Router({
           component: Leaflets,
         },
         {
-          path: 'vpnScreen',
-          name: 'VpnScreen',
-          component: VpnScreen,
+          path: 'hpvScreen',
+          name: 'HpvScreen',
+          component: HpvScreen,
         },
         {
           path: 'xbTest',
@@ -115,7 +130,12 @@ export default new Router({
         //新闻中心页面链接(待做)
 
 
-
+        //我的订单页面
+        {
+          path: 'myOrder',
+          name: 'MyOrder',
+          component: MyOrder,
+        },
             
       ]
     },

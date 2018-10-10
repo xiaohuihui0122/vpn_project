@@ -30,7 +30,7 @@
        isLogin:false,
        navWidth:'70%',//我的订单60%
        navItems:[
-         {text:'宫颈癌筛查',href:'/index/vpnScreen',lineLeft:'0'},
+         {text:'宫颈癌筛查',href:'/index/hpvScreen',lineLeft:'0'},
          {text:'性病检测',href:'/index/xbTest',lineLeft:'25%'},
          {text:'医学教室',href:'/index/classroom',lineLeft:'50%'},
          {text:'了解自采样',href:'/index/know',lineLeft:'75%'}
@@ -45,16 +45,52 @@
         this.lineLeft = this.navItems[index].lineLeft;
       },
       leave: function(index){
-        this.mouseHover = false;
-        this.lineLeft = this.navItems[index].lineLeft;
+        this.activeRoute();
       },
       handleClick(index){
         //路由监听控制当前所在的路由样式
+        this.lineleft = this.navItems[index].lineLeft;
+        this.mouseHover = true;
+      },
+      loginMode:function(){
+        this.isLogin = true;
+        this.navWidth = '60%';
+        this.$router.push({path:'/'});
+      },
+      // 路由检测
+      activeRoute:function(){
+        //  获得当前路由，激活当前路由样式
+        var route  = this.$route;
+        if(route.name == 'HpvScreen'){//5种
+          this.mouseHover = true;
+          this.lineLeft = '0';
+        }else if(route.name == 'XbTest'){
+          this.mouseHover = true;
+          this.lineLeft = '25%';
+        }else if(route.name == 'Classroom'){
+          this.mouseHover = true;
+          this.lineLeft = '50%';
+        }else if(route.name == 'Know'){
+          this.mouseHover = true;
+          this.lineLeft = '70%';
+        }else{
+          this.mouseHover = false;
+        }
       }
     },
    components: {
 
-   }
+   },
+   created() {
+   this.activeRoute();
+    //  页面初始化状态
+    this.$bus.on('go-login', this.loginMode);
+    // 看是否从session，localStorage或者发请求从cookie里面存数据获取（最起码刷新一遍页面不至于退出登录）
+
+  },
+  mounted(){
+     
+  }
  }
 </script>
 
@@ -73,5 +109,5 @@
   .text-logo{clear:both;}
   .line{width:100%;height:1px;border-bottom: 2px solid #e5e5e5;bottom:0;position:absolute;z-index: 1000;}
   .indicator{position:absolute;left:0;width:25%;height:1px;border-bottom:2px solid #d40614;/*no*/transition:left 0.5s;z-index: 999;}
-  .router-link-active{text-decoration: none;}
+  nav ul li a.router-link-active{text-decoration: none;}
 </style>

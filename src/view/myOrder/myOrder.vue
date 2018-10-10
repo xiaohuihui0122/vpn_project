@@ -1,19 +1,22 @@
 <template>
  <div>
-    这是宫颈癌筛查页面
+     
+    <Footer></Footer>
  </div>
 </template>
 
 <script>
+ import Footer from '../../components/footer.vue'
+
  export default {
-   name:'VpnScreen',
+   name:'MyOrder',
    data () {
      return {
 
      }
    },
    components: {
-
+     Footer,
    }
  }
 </script>
@@ -22,4 +25,3 @@
 
  
 </style>
-
